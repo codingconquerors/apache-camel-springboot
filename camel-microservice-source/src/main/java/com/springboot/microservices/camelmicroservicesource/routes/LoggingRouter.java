@@ -7,7 +7,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class LoggingRouter extends RouteBuilder {
     /**
      * <b>Called on initialization to build the routes using the fluent builder syntax.</b>

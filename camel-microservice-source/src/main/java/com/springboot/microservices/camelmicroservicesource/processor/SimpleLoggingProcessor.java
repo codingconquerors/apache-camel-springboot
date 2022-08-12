@@ -11,6 +11,8 @@ public class SimpleLoggingProcessor implements Processor {
 
     @Override
     public void process(Exchange exchange) throws Exception {
-        logger.info("SimpleLoggingProcessor {}", exchange.getMessage().getBody());
+        exchange.getMessage().setHeader("header1", "dummyHeader");
+        logger.info("SimpleLoggingProcessor exchange body {}", exchange.getMessage().getBody());
+        logger.info("SimpleLoggingProcessor default headers {}", exchange.getMessage().getHeaders());
     }
 }

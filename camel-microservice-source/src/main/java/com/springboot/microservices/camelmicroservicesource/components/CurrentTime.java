@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 public class CurrentTime {
 
     public String getCurrentTime() {
-        return "Time now is" + LocalDateTime.now();
+        return "Time now is-->" + LocalDateTime.now();
     }
 }

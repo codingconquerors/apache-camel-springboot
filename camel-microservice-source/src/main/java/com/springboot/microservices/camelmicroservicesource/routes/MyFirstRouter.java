@@ -37,12 +37,15 @@ public class MyFirstRouter extends RouteBuilder {
 
                 .log("${body}") // processing
                 .bean(currentTime, "getCurrentTime") // with method name
-                .to("log:first-timer")
+               // .log("${body}")
+                //.to("log:first-timer")
                 .bean(loggingProcessing) // logging through bean
 
-                // Adds the custom processor to this destination which could be a final destination, or could be a transformation in a pipeline
+                // Adds the custom processor to this destination which could be a final destination,
+                // or could be a transformation in a pipeline
                 .process(new SimpleLoggingProcessor())  //invocation of a processor
-                .log("${body}");
+                .log("${body}")
+        ;
 
       /*  from("timer://simpleTimer?period=1000")
                 .setBody(simple("Timer is at ${header.firedTime}"))
